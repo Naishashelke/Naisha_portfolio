@@ -1,4 +1,6 @@
-// Smooth scroll
+// script.js
+
+// 1️⃣ Smooth scrolling for nav links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -8,16 +10,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Custom cursor
+// 2️⃣ Custom black-pink cursor
 const cursor = document.createElement('div');
 cursor.classList.add('custom-cursor');
 document.body.appendChild(cursor);
+
 document.addEventListener('mousemove', e => {
     cursor.style.left = e.pageX + 'px';
     cursor.style.top = e.pageY + 'px';
 });
 
-// Reveal on scroll
+// 3️⃣ Reveal elements on scroll
 const revealElements = document.querySelectorAll('.reveal');
 window.addEventListener('scroll', () => {
     const windowHeight = window.innerHeight;
@@ -32,9 +35,10 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Floating images hover
+// 4️⃣ Floating animation for images (certificates/projects)
 const floatImages = document.querySelectorAll('.float-img');
 floatImages.forEach(img => {
+    img.style.transition = 'transform 0.3s ease';
     img.addEventListener('mouseover', () => {
         img.style.transform = 'translateY(-10px) scale(1.05)';
     });
@@ -43,17 +47,20 @@ floatImages.forEach(img => {
     });
 });
 
-// Mouse trails
+// 5️⃣ Floating pink dots and hearts trail
 document.addEventListener('mousemove', e => {
     const dot = document.createElement('div');
     dot.className = 'floating-dot';
     dot.style.left = e.pageX + 'px';
     dot.style.top = e.pageY + 'px';
     document.body.appendChild(dot);
-    setTimeout(() => dot.remove(), 1000);
+
+    // Remove after 1s
+    setTimeout(() => {
+        dot.remove();
+    }, 1000);
 });
 
-// Hearts on click
 document.addEventListener('click', e => {
     const heart = document.createElement('div');
     heart.className = 'heart';

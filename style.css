@@ -118,3 +118,22 @@ animation:float 4s infinite;
 50%{transform:translateY(-15px);}
 100%{transform:translateY(0);}
 }
+
+/* Floating Words Style */
+.floating-word{
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff4da6; /* cute pink */
+    user-select: none;
+    pointer-events: none;
+    animation: floatJump 3s ease-in-out infinite;
+}
+
+@keyframes floatJump{
+    0% { transform: translateY(0px); }
+    25% { transform: translateY(-20px); }
+    50% { transform: translateY(0px); }
+    75% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}

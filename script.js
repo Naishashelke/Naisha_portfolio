@@ -2,32 +2,32 @@ const cursor=document.createElement("div")
 
 cursor.classList.add("cursor")
 
+cursor.innerHTML="💗"
+
 document.body.appendChild(cursor)
 
 document.addEventListener("mousemove",(e)=>{
 
 cursor.style.left=e.pageX+"px"
-
 cursor.style.top=e.pageY+"px"
 
 })
 
 document.addEventListener("click",(e)=>{
 
-let sparkle=document.createElement("div")
+let heart=document.createElement("div")
 
-sparkle.style.position="absolute"
-sparkle.style.left=e.pageX+"px"
-sparkle.style.top=e.pageY+"px"
-sparkle.style.width="10px"
-sparkle.style.height="10px"
-sparkle.style.background="#b57edc"
-sparkle.style.borderRadius="50%"
+heart.innerHTML="💖"
 
-document.body.appendChild(sparkle)
+heart.style.position="absolute"
+heart.style.left=e.pageX+"px"
+heart.style.top=e.pageY+"px"
+heart.style.fontSize="16px"
+
+document.body.appendChild(heart)
 
 setTimeout(()=>{
-sparkle.remove()
-},500)
+heart.remove()
+},600)
 
 })

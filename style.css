@@ -1,90 +1,64 @@
-body{
-margin:0;
-font-family:Segoe UI;
-background:#0f0f0f;
-color:white;
+/* Cursor */
+.custom-cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ff4da6;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+    z-index: 1000;
 }
 
-nav{
-background:black;
-padding:15px;
-text-align:center;
+/* Reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
 }
 
-nav a{
-color:#ff4da6;
-margin:15px;
-text-decoration:none;
-font-weight:bold;
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-nav a:hover{
-color:white;
+/* Floating images class */
+.float-img {
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-header{
-text-align:center;
-padding:50px;
-background:linear-gradient(135deg,#000,#ff4da6);
+/* Pink hearts on click */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff4da6;
+    transform: rotate(45deg);
+    pointer-events: none;
+    z-index: 1000;
+    animation: heart-float 0.8s forwards;
+}
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff4da6;
+    border-radius: 50%;
+}
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+.heart::after {
+    left: 10px;
+    top: 0;
 }
 
-.profile{
-width:170px;
-height:170px;
-border-radius:50%;
-border:5px solid #ff4da6;
-object-fit:cover;
-animation:float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-15px);}
-100%{transform:translateY(0px);}
-}
-
-.container{
-max-width:900px;
-margin:auto;
-padding:40px;
-}
-
-.card{
-background:#1a1a1a;
-padding:25px;
-margin-top:20px;
-border-radius:12px;
-border:1px solid #ff4da6;
-animation:fadeIn 1.5s;
-}
-
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(30px);}
-to{opacity:1; transform:translateY(0);}
-}
-
-.skills span{
-background:#ff4da6;
-padding:8px 15px;
-margin:5px;
-border-radius:20px;
-display:inline-block;
-}
-
-.cert-img{
-width:100%;
-border-radius:10px;
-margin-top:10px;
-transition:transform .4s;
-}
-
-.cert-img:hover{
-transform:scale(1.05);
-}
-
-footer{
-text-align:center;
-padding:20px;
-background:black;
-color:#ff4da6;
+@keyframes heart-float {
+    0% {transform: rotate(45deg) scale(1); opacity: 1;}
+    100% {transform: rotate(45deg) scale(1.5) translateY(-50px); opacity: 0;}
 }

@@ -138,4 +138,32 @@ animation:float 4s infinite;
     100% { transform: translateY(0px); }
 }
 
+/* Clickable email style to match theme */
+.email a {
+    color: #ff4da6;       /* pink */
+    font-weight: bold;
+    text-decoration: underline;
+    transition: 0.3s;
+}
 
+.email a:hover {
+    color: #e0b0ff;       /* lavender */
+    text-decoration: none;
+}
+
+#contact {
+    padding: 40px;
+    background: linear-gradient(135deg, #0f0f0f, #1a001a, #330033); /* same theme as home */
+    color: white;
+    text-align: center;
+}
+
+#contact h2 {
+    color: #ff4da6;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.2rem;
+}

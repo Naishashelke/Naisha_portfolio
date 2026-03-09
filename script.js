@@ -34,7 +34,7 @@ heart.remove()
 
 // Floating "Hello" words
 const colors = ["#ff4da6", "#ff77b3", "#e0b0ff"]; // Pink, Lavender
-const words = ["Hello", "Hi", "👋", "Welcome!"];
+const words = ["Hello", "👋", "Welcome!"];
 
 function createFloatingWord() {
     const word = document.createElement("div");

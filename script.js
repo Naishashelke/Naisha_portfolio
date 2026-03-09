@@ -56,22 +56,3 @@ function createFloatingWord() {
 // Create a new floating word every 0.8 second
 setInterval(createFloatingWord, 800);
 
-// Floating words
-const colors = ["#ff4da6", "#ff77b3", "#e0b0ff"];
-const words = ["Hello", "Hi", "👋", "Welcome!"];
-
-function createFloatingWord() {
-    const word = document.createElement("div");
-    word.className = "floating-word";
-    word.innerText = words[Math.floor(Math.random() * words.length)];
-    word.style.left = Math.random() * window.innerWidth + "px";
-    word.style.top = Math.random() * window.innerHeight + "px";
-    word.style.color = colors[Math.floor(Math.random() * colors.length)];
-    word.style.fontSize = (20 + Math.random() * 30) + "px";
-
-    document.body.appendChild(word);
-
-    setTimeout(() => word.remove(), 5000);
-}
-
-setInterval(createFloatingWord, 800);

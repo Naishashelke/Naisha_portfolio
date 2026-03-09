@@ -137,3 +137,68 @@ animation:float 4s infinite;
     75% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
 }
+
+/* Cat container */
+#cat-container {
+    position: fixed;
+    top: -150px;  /* start off screen */
+    left: 20px;   /* corner position */
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: catPopIn 2s forwards;
+}
+
+#waving-cat {
+    width: 100px;
+    animation: wave 1s infinite alternate;
+}
+
+/* Cat wave animation */
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(20deg); }
+    100% { transform: rotate(-10deg); }
+}
+
+/* Pop-in animation */
+@keyframes catPopIn {
+    0% { top: -150px; opacity: 0; }
+    100% { top: 20px; opacity: 1; }
+}
+
+/* Bubble style */
+#cat-bubble {
+    background: #ff4da6;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    animation: bubblePop 2s forwards;
+}
+
+@keyframes bubblePop {
+    0% { opacity: 0; transform: scale(0); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Floating words */
+.floating-word{
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff4da6;
+    user-select: none;
+    pointer-events: none;
+    animation: floatJump 3s ease-in-out infinite;
+}
+
+@keyframes floatJump{
+    0% { transform: translateY(0px); }
+    25% { transform: translateY(-20px); }
+    50% { transform: translateY(0px); }
+    75% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}

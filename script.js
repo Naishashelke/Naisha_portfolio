@@ -1,71 +1,52 @@
-// script.js
+/* CUSTOM CURSOR */
 
-// 1️⃣ Smooth scrolling for nav links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+const cursor=document.createElement("div")
+cursor.classList.add("cursor")
+document.body.appendChild(cursor)
 
-// 2️⃣ Custom black-pink cursor
-const cursor = document.createElement('div');
-cursor.classList.add('custom-cursor');
-document.body.appendChild(cursor);
+document.addEventListener("mousemove",(e)=>{
+cursor.style.left=e.pageX+"px"
+cursor.style.top=e.pageY+"px"
+})
 
-document.addEventListener('mousemove', e => {
-    cursor.style.left = e.pageX + 'px';
-    cursor.style.top = e.pageY + 'px';
-});
+/* CLICK SPARKLE EFFECT */
 
-// 3️⃣ Reveal elements on scroll
-const revealElements = document.querySelectorAll('.reveal');
-window.addEventListener('scroll', () => {
-    const windowHeight = window.innerHeight;
-    revealElements.forEach(el => {
-        const revealTop = el.getBoundingClientRect().top;
-        const revealPoint = 150;
-        if(revealTop < windowHeight - revealPoint){
-            el.classList.add('active');
-        } else {
-            el.classList.remove('active');
-        }
-    });
-});
+document.addEventListener("click",(e)=>{
 
-// 4️⃣ Floating animation for images (certificates/projects)
-const floatImages = document.querySelectorAll('.float-img');
-floatImages.forEach(img => {
-    img.style.transition = 'transform 0.3s ease';
-    img.addEventListener('mouseover', () => {
-        img.style.transform = 'translateY(-10px) scale(1.05)';
-    });
-    img.addEventListener('mouseout', () => {
-        img.style.transform = 'translateY(0) scale(1)';
-    });
-});
+let sparkle=document.createElement("span")
 
-// 5️⃣ Floating pink dots and hearts trail
-document.addEventListener('mousemove', e => {
-    const dot = document.createElement('div');
-    dot.className = 'floating-dot';
-    dot.style.left = e.pageX + 'px';
-    dot.style.top = e.pageY + 'px';
-    document.body.appendChild(dot);
+sparkle.style.position="absolute"
+sparkle.style.left=e.pageX+"px"
+sparkle.style.top=e.pageY+"px"
+sparkle.style.width="8px"
+sparkle.style.height="8px"
+sparkle.style.background="#b57edc"
+sparkle.style.borderRadius="50%"
+sparkle.style.pointerEvents="none"
+sparkle.style.animation="sparkle 0.6s linear"
 
-    // Remove after 1s
-    setTimeout(() => {
-        dot.remove();
-    }, 1000);
-});
+document.body.appendChild(sparkle)
 
-document.addEventListener('click', e => {
-    const heart = document.createElement('div');
-    heart.className = 'heart';
-    heart.style.left = e.pageX - 10 + 'px';
-    heart.style.top = e.pageY - 10 + 'px';
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 800);
-});
+setTimeout(()=>{
+sparkle.remove()
+},600)
+
+})
+
+/* SCROLL ANIMATION */
+
+window.addEventListener("scroll",()=>{
+
+document.querySelectorAll(".card").forEach(card=>{
+
+let position=card.getBoundingClientRect().top
+let screen=window.innerHeight
+
+if(position<screen-100){
+card.style.opacity="1"
+card.style.transform="translateY(0)"
+}
+
+})
+
+})

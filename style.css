@@ -25,15 +25,13 @@ color:#9b5de5;
 }
 
 /* HERO */
-
 .hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:120px 20px;
-}
-
-.hero h1{
-font-size:40px;
-color:#ff69b4;
 }
 
 /* BUTTON */

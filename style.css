@@ -1,16 +1,17 @@
 body{
 margin:0;
-font-family:Arial;
-background:linear-gradient(135deg,#ffd6ec,#e6d6ff);
-color:#4b3b50;
+font-family:Segoe UI;
+background:#0f0f0f;
+color:white;
 }
 
 /* NAVBAR */
 
 nav{
-background:white;
+background:black;
 padding:18px;
 text-align:center;
+border-bottom:2px solid #ff69b4;
 }
 
 nav a{
@@ -18,13 +19,16 @@ color:#ff69b4;
 margin:15px;
 text-decoration:none;
 font-weight:bold;
+font-size:16px;
+transition:0.3s;
 }
 
 nav a:hover{
-color:#9b5de5;
+color:#c7a6ff;
 }
 
 /* HERO */
+
 .hero{
 height:100vh;
 display:flex;
@@ -32,27 +36,69 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+background:linear-gradient(135deg,#000000,#1a001f);
+}
+
+.hero h1{
+font-size:55px;
+color:#ff69b4;
+}
+
+.hero p{
+font-size:20px;
+color:#c7a6ff;
 }
 
 /* BUTTON */
 
 .btn{
 background:#ff69b4;
-color:white;
 border:none;
 padding:12px 25px;
 border-radius:25px;
+color:white;
+font-weight:bold;
 cursor:pointer;
+transition:0.3s;
 }
 
-/* CARD */
+.btn:hover{
+background:#c7a6ff;
+color:black;
+}
+
+/* CARD DESIGN */
 
 .card{
-background:white;
+background:#1c1c1c;
 padding:25px;
 margin:20px;
-border-radius:20px;
-box-shadow:0 10px 20px rgba(0,0,0,0.1);
+border-radius:15px;
+border-left:4px solid #ff69b4;
+box-shadow:0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* ABOUT LIST */
+
+.about-list{
+max-width:700px;
+margin:auto;
+font-size:18px;
+line-height:1.8;
+}
+
+.about-list li{
+margin:10px 0;
+color:#e6d6ff;
+}
+
+/* HEART CURSOR */
+
+.cursor{
+position:fixed;
+font-size:22px;
+pointer-events:none;
+z-index:9999;
 }
 
 /* FLOATING DOLL */
@@ -60,24 +106,12 @@ box-shadow:0 10px 20px rgba(0,0,0,0.1);
 .doll{
 position:fixed;
 bottom:20px;
-right:20px;
-width:80px;
+right:25px;
+width:90px;
 animation:float 4s infinite;
 }
 
-/* CURSOR */
-
-.cursor{
-width:18px;
-height:18px;
-background:#ff69b4;
-border-radius:50%;
-position:fixed;
-pointer-events:none;
-transform:translate(-50%,-50%);
-}
-
-/* ANIMATION */
+/* FLOAT ANIMATION */
 
 @keyframes float{
 0%{transform:translateY(0);}
